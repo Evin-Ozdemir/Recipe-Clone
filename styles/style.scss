@@ -1,0 +1,383 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+// Scss İmports
+@import "./reset";
+@import "./mixin";
+
+body {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+  min-height: 100vh;
+  font-family: "Poppins", serif;
+}
+
+.container {
+  background-color: #ffffff;
+  max-width: 120rem;
+  margin: 4vw auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.502);
+  @include laptop {
+    margin: auto;
+    min-height: 100vh;
+  }
+}
+
+// Grid Areas
+.logo {
+  grid-area: logo;
+}
+
+.search-form {
+  grid-area: search;
+}
+
+.likes {
+  grid-area: likes;
+}
+
+// * Header
+
+header {
+  display: grid;
+  grid-template-areas: "logo search likes";
+  background-color: #f9f5f3;
+  @include ipad {
+    grid-template-areas:
+      "logo likes"
+      "search search";
+  }
+  // Logo
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    img {
+      height: 100px;
+    }
+  }
+  // Search Form
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include ipad {
+      margin-bottom: 30px;
+    }
+    //     form
+    form {
+      background-color: #ffffff;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      //       &:focus-within ==> Bir elemana focuslandığı anı yakalamak için kullanılır.
+      &:focus-within {
+        box-shadow: 0 20px 30px rgb(38, 57, 77);
+        transform: translateY(-2px);
+      }
+      //       input
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        width: 300px;
+        padding: 3px 8px;
+        &::placeholder {
+          color: #dad0cc;
+        }
+      }
+      //       button
+      button {
+        padding: 10px 30px;
+        border-radius: 40px;
+        background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+        color: white;
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+  // Likes
+  .likes {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 60px;
+    @include ipad {
+      margin-left: unset;
+    }
+
+    .bi {
+      margin-right: 5px;
+      &:hover {
+        color: gray;
+      }
+    }
+
+    &:hover > .list {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .list {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      bottom: -100px;
+      background-color: rgb(121, 121, 121);
+      min-width: 240px;
+      min-height: 140px;
+      padding: 10px;
+      border-radius: 20px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        border-bottom: 1px solid white;
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+
+        p {
+          font-size: 15px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// * Main
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100%;
+  @include laptop {
+    grid-template-columns: 1fr;
+  }
+  // Results
+  .results {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // Result Link
+    .result-link {
+      height: 100% !important;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 20px;
+      transition: all 0.4s;
+      &:hover {
+        background-color: #f9f5f3;
+        transform: translateY(-2px);
+      }
+      // İmage
+      img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+      }
+      // Data
+      .data {
+        h4 {
+          color: #fbda61;
+          max-width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          // Bir satıra sığmayan yazıların gözükmemesini sağlar.
+          @include laptop {
+            max-width: 500px;
+          }
+        }
+      }
+    }
+  }
+  // Recipe
+  .recipe {
+    background-color: #f9f5f3;
+    height: 100vh !important;
+    figure {
+      height: 300px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      h1 {
+        font-family: "Ubuntu", sans-serif;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 20%) skewY(-6deg);
+        color: white;
+        font-weight: 600;
+        background-color: #a9c9ff;
+        background-image: linear-gradient(90deg, #a9c9ff 0%, #ffbbec 100%);
+        padding: 10px 30px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.538);
+        white-space: nowrap;
+      }
+      .like-area {
+        display: flex;
+        justify-content: end;
+        padding: 30px;
+
+        i {
+          font-size: 26px;
+          padding: 5px;
+          cursor: pointer;
+          color: pink;
+          border-radius: 10px;
+          transition: all 300ms;
+          &:hover {
+            background-color: #bbbbbb;
+          }
+        }
+      }
+    }
+    // Ingredients
+    .ingredients {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      margin-top: 40px;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 40px;
+        @include laptop {
+          grid-template-columns: 1fr;
+        }
+        li {
+          display: flex;
+          gap: 10px;
+          i {
+            color: #b1cdfe;
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        margin-top: 30px;
+        font-weight: 600;
+        color: white;
+        background-image: linear-gradient(90deg, #a9c9ff 0%, #ffbbec 100%);
+        max-width: 500px;
+        width: 80%;
+        margin: 50px auto;
+        font-size: 15px;
+        transition: all 300ms;
+        padding: 10px;
+        i {
+          font-size: 20px;
+          // Butona tıklanıldığında iconun tıklanma özelliğine sahip olması istenilen yapıyı kuramamıza sebep oldu.Bunu engellemek için iconun tıklanma olayını engelledik
+          pointer-events: none;
+        }
+        &:hover {
+          scale: 0.95;
+        }
+        span {
+          // Butona tıklanıldığında span'ın tıklanma özelliğine sahip olması istenilen yapıyı kuramamıza sebep oldu.Bunu engellemek için span'ın tıklanma olayını engelledik
+          pointer-events: none;
+        }
+      }
+    }
+    // Directions
+    .directions {
+      text-align: center;
+      padding-bottom: 40px;
+      h2 {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 30px;
+        transform: skewY(-3deg);
+        color: #fdbbec;
+        text-shadow: 0 0 30px #fdbbec;
+      }
+      p {
+        padding: 50px;
+        span {
+          color: #fdbbec;
+        }
+      }
+      a {
+        border: 1px solid #a9c9ff;
+        padding: 10px 30px;
+        border-radius: 30px;
+        transition: all 300ms;
+        &:hover {
+          background-color: #a9c9ff;
+          color: white;
+        }
+      }
+    }
+  }
+  // Shopping
+  .shopping {
+    padding: 5px 10px;
+    h2 {
+      font-family: "Ubuntu", sans-serif;
+      text-align: center;
+      color: #a9c9ff;
+      margin: 30px;
+    }
+    .button-area {
+      display: flex;
+      justify-content: end;
+      button {
+        display: none;
+        background: rgb(221, 0, 0);
+        color: white;
+        cursor: pointer;
+        transition: background 300ms scale 200ms;
+        &:hover {
+          background: rgb(139, 0, 0);
+          scale: 0.9;
+        }
+      }
+    }
+    ul {
+      li {
+        padding: 5px;
+        border-bottom: 1px solid gray;
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Loader
+.loader {
+  margin: 80px auto;
+  img {
+    width: 250px;
+  }
+}

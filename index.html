@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Clone</title>
+    <!-- * Css Link -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- * Fav Icon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/food-logo.png"
+      type="image/x-icon"
+    />
+    <!-- * Bs Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- * Toastify Css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- * Header -->
+      <header>
+        <!-- logo -->
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/food-logo.png" alt="logo" />
+          </a>
+        </div>
+        <!-- form -->
+        <div class="search-form">
+          <form>
+            <input type="search" placeholder="Ürün adı giriniz ..." />
+            <button type="submit">
+              <i class="bi bi-search"></i>
+              <span>Ara</span>
+            </button>
+          </form>
+        </div>
+        <!-- likes -->
+        <div class="likes">
+          <i class="bi bi-bookmark-heart-fill"></i>
+          <div class="list">
+            <!-- <a href="#">
+              <img
+                src="
+              http://forkify-api.herokuapp.com/images/5337400468_d5892f3a03_od5cd.jpg"
+                alt=""
+              />
+              <p>Chicken Tortilla Soup</p>
+            </a> -->
+          </div>
+        </div>
+      </header>
+      <!-- * Main -->
+      <main>
+        <section class="results">
+          <!-- <div class="result-link">
+            <img
+              src="http://forkify-api.herokuapp.com/images/fruitleather300x2001f9f84c4.jpg"
+              alt="result-img"
+            />
+            <div class="data">
+              <h4>How to Make Fruit Leather</h4>
+              <p>Simply Recipes</p>
+            </div>
+          </div>
+          <div class="result-link">
+            <img
+              src="http://forkify-api.herokuapp.com/images/fruitleather300x2001f9f84c4.jpg"
+              alt="result-img"
+            />
+            <div class="data">
+              <h4>How to Make Fruit Leather</h4>
+              <p>Simply Recipes</p>
+            </div>
+          </div>
+          <div class="result-link">
+            <img
+              src="http://forkify-api.herokuapp.com/images/fruitleather300x2001f9f84c4.jpg"
+              alt="result-img"
+            />
+            <div class="data">
+              <h4>How to Make Fruit Leather</h4>
+              <p>Simply Recipes</p>
+            </div>
+          </div> -->
+        </section>
+        <section class="recipe">
+          <!-- <figure>
+            <img
+              src="http://forkify-api.herokuapp.com/images/kale_market_saladd20e.jpg"
+              alt=""
+            />
+            <h1>Kale Market Salad</h1>
+            <div class="like-area">
+              <i class="bi bi-heart"></i>
+            </div>
+          </figure>
+
+          <div class="ingredients">
+            <ul>
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <span>Tarif Eleman</span>
+              </li>
+            </ul>
+            <button id="add-to-basket">
+              <i class="bi bi-cart2"></i>
+              <span>Alışveriş Sepetine Ekle</span>
+            </button>
+          </div>
+
+          <div class="directions">
+            <h2>Nasıl Pişirilir?</h2>
+            <p>
+              Bu tarif dikkatlice <span>101 Cookbooks</span> tarafından
+              hazırlanmış ve test edilmiştir. Diğer detaylara onların websitesi
+              üzerinden erişebilirsiniz.
+            </p>
+
+            <a href="#" target="_blank">Yönerge</a>
+          </div> -->
+        </section>
+        <section class="shopping">
+          <h2>Sepet</h2>
+          <!-- Sepeti Temizle Buton -->
+          <div class="button-area">
+            <button id="clear">
+              <i class="bi bi-trash"></i>
+              <span>Sepeti Temizle</span>
+            </button>
+          </div>
+          <!-- Sepet Elemanları -->
+          <ul>
+            <!-- <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li>
+            <li>
+              <i class="bi bi-x"></i>
+              <span>Sepet Elemanı</span>
+            </li> -->
+          </ul>
+        </section>
+      </main>
+    </div>
+    <!-- * Js Bağlantı -->
+    <script src="./js/main.js" type="module"></script>
+    <!-- * Toastify Js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <!-- * Uuid Js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
