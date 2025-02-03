@@ -7,6 +7,10 @@
 
 https://github.com/user-attachments/assets/d7b68d1e-6760-46ea-8d08-21d59231eea7
 
+![ScreenRecording2024-12-23at230237_compressed-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/45a53808-0c17-4379-b22d-652fb3436dc1)
+
+
+
 <h2>🛠️ Technologies and Libraries Used</h2>
  <ul>
    <li>JavaScript: To create project logic.</li>
